@@ -73,15 +73,28 @@ public class Libro {
         return x.name.equals(name) && x.autore.equals(autore) && x.ISBN.equals(ISBN) && x.year == year;
     }
 
-    public static void main(String[] args) {
-        Libro A,B,C; 
-        A = new Libro(); // Dichiaro che al suo interno c'è un Libro() che poi verrà riempito dal codice di class Libro()
-        B = new Libro("aaaa", "aaa2", "AAA_2222", 1999);
-        C = new Libro(A);
+    public boolean equalName(Libro x){
+        return x.name.equals(name);
+    }
 
-       System.out.println( A.toString() + "\n\n" + B.toString() + "\n\n" + C.toString());
-       if(C.equals(B) == true){
+    public boolean equalYear(Libro x){
+        return x.year == year;
+    }
+
+    public static void main(String[] args) {
+        Libro a,b,c; 
+        a = new Libro(); // Dichiaro che al suo interno c'è un Libro() che poi verrà riempito dal codice di class Libro()
+        b = new Libro("aaaa", "aaa2", "AAA_2222", 1999);
+        c = new Libro(a);
+
+       System.out.println( a.toString() + "\n\n" + b.toString() + "\n\n" + c.toString());
+       if(c.equals(b) == true){
         System.out.println("Banane non più in vedita però ci sono i kiwi"); 
        }
     }
+
+    // @Override
+    // public int compareTo(Libro x) {
+    //     return this.name.compareTo(x.name);
+    // }
 }
